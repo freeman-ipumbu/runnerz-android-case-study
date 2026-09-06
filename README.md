@@ -37,17 +37,34 @@ It is not a follower network wearing running clothes. The unit of value is a run
 - Run Connections built from completed activity rather than vanity follows.
 - Founder, Pioneer, Legend, Trust Circle and Brand Ambassador distinctions.
 - Challenge, circuit, share-card and squad-versus-squad growth foundations.
+- Production-shaped email signup, confirmation, sign-in and password recovery with clear next actions.
+- Event-backed in-app and push-notification foundations for run and community moments.
+- A lawful emergency quick-dial action that opens the system dialler without claiming dispatch.
 - Honest weather, location and safety states that do not claim capabilities the product has not activated.
 
 ## Selected Android surfaces
 
-| Discover | Matches | Routes |
-|---|---|---|
-| ![Runnerz Discover](assets/app-discover.webp) | ![Runnerz Matches](assets/app-matches.webp) | ![Runnerz Routes](assets/app-routes.webp) |
+All captures below come from the real `1.0.4` Android build on a physical HONOR device at 1200 × 2664. No speculative phone mockups are used.
 
-| Community | Founder profile |
+| Welcome | Secure sign-in | Create account |
+|---|---|---|
+| ![Runnerz welcome](assets/app-welcome.webp) | ![Runnerz sign-in](assets/app-sign-in.webp) | ![Runnerz create account](assets/app-create-account.webp) |
+
+| Password recovery | Authenticated password update |
 |---|---|
-| ![Runnerz Community](assets/app-community.webp) | ![Runnerz Founder profile](assets/app-profile.webp) |
+| ![Runnerz password recovery](assets/app-password-recovery.webp) | ![Runnerz new password](assets/app-new-password.webp) |
+
+| Matches | Routes | Route confidence |
+|---|---|---|
+| ![Runnerz Matches](assets/app-matches.webp) | ![Runnerz Routes](assets/app-routes.webp) | ![Runnerz route confidence](assets/app-route-confidence.webp) |
+
+| Discover | Community | Founder profile |
+|---|---|---|
+| ![Runnerz Discover](assets/app-discover.webp) | ![Runnerz Community](assets/app-community.webp) | ![Runnerz Founder profile](assets/app-profile.webp) |
+
+| Emergency quick dial |
+|---|
+| ![Runnerz emergency quick dial](assets/app-emergency-quick-dial.webp) |
 
 ## Design science approach
 
@@ -64,6 +81,8 @@ It is not a follower network wearing running clothes. The unit of value is a run
 - Android SDK 36 with minimum SDK 26
 - MapLibre behind a provider-neutral map boundary
 - Supabase authentication, PostgREST and versioned SQL migrations
+- PKCE-backed Android confirmation and password-recovery callbacks
+- Firebase Cloud Messaging transport and private App Distribution
 - Ktor networking and DataStore preferences
 - Real-device install and regression testing
 - Provider-neutral route and location domain models
@@ -76,7 +95,11 @@ Exact personal locations and private homes are not part of the public product st
 
 ## Current status
 
-The canonical Android build is an active private product. Core app experiences, authentication, route discovery, mapping, weather and meetup foundations have been built and tested. Wider production wiring and field verification remain staged work.
+The canonical Android implementation remains private. Version `1.0.4` is installed as separate Live and Field Test applications on the same physical device, and `1.0.4-field-test (5)` is distributed through a controlled Firebase tester group. Both build flavours pass their unit-test suites and assemble successfully.
+
+Account creation, email confirmation, visible-password controls, matching-password validation, resend confirmation, privacy-safe recovery and authenticated in-app password updates are connected to Supabase Auth. A real founder recovery uncovered a callback/session race; the release now waits for the genuine authenticated recovery session before exposing the password-update form.
+
+Core route discovery, matching, community, profile, lawful SOS dialling and notification foundations have been built and exercised. Wider cohort validation, field verification, release signing and store review remain deliberate gates rather than launch claims.
 
 ## Repository boundary
 
