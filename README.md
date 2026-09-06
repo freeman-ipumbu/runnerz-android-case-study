@@ -32,7 +32,7 @@ It is not a follower network wearing running clothes. The unit of value is a run
 - Explainable matching based on pace, intent, timing and route compatibility.
 - Windhoek-first route discovery with genuine open-data geometry.
 - Route DNA covering distance, surface, elevation and running character.
-- Protected public meetup suggestions that avoid presenting private homes as starting points.
+- Ranked public meetup suggestions shown as numbered route-map options, while avoiding private homes and keeping field checks explicit.
 - Create Run, join/leave and post-run confirmation journeys.
 - Run Connections built from completed activity rather than vanity follows.
 - Founder, Pioneer, Legend, Trust Circle and Brand Ambassador distinctions.
@@ -47,7 +47,7 @@ It is not a follower network wearing running clothes. The unit of value is a run
 
 ## Selected Android surfaces
 
-All captures below come from the real `1.0.7` Android build on a physical HONOR device at 1200 × 2664. No speculative phone mockups are used.
+All captures below come from the real `1.0.8` Android build on a physical HONOR device at 1200 × 2664. No speculative phone mockups are used.
 
 | Welcome | Secure sign-in | Create account |
 |---|---|---|
@@ -68,6 +68,10 @@ All captures below come from the real `1.0.7` Android build on a physical HONOR 
 | Governed badge shelf | Privacy-safe share studio | Emergency quick dial |
 |---|---|---|
 | ![Runnerz governed recognition](assets/app-badges.webp) | ![Runnerz share-card studio](assets/app-share-card.webp) | ![Runnerz emergency quick dial](assets/app-emergency-quick-dial.webp) |
+
+| Ranked meetup options on the live route map |
+|---|
+| ![Runnerz ranked public meetup options](assets/app-meetup-options.webp) |
 
 | Device-aware completion moment |
 |---|
@@ -102,11 +106,11 @@ Exact personal locations and private homes are not part of the public product st
 
 ## Current status
 
-The canonical Android implementation remains private. Version `1.0.7` is installed as separate Live and Field Test applications on the same physical device, and `1.0.7-field-test (8)` is distributed through a controlled Firebase tester group. Both build flavours pass their unit-test suites and assemble successfully.
+The canonical Android implementation remains private. Version `1.0.8` is installed as separate Live and Field Test applications on the same physical device, and `1.0.8-field-test (9)` is distributed through controlled Firebase App Distribution access. Both build flavours pass their unit-test suites and assemble successfully.
 
 Account creation, email confirmation, visible-password controls, matching-password validation, resend confirmation, privacy-safe recovery and authenticated in-app password updates are connected to Supabase Auth. A real founder recovery uncovered a callback/session race; the release now waits for the genuine authenticated recovery session before exposing the password-update form.
 
-Core route discovery, matching, community, editable profiles, lawful SOS dialling and notification foundations have been built and exercised. The live backend also passes 102 pgTAP assertions across schema, RLS, growth and private push delivery. Wider cohort validation, field verification, release signing and store review remain deliberate gates rather than launch claims.
+Core route discovery, matching, community, editable profiles, lawful SOS dialling and notification foundations have been built and exercised. The route map now renders the full ranked two-to-three-option public meetup set for each catalogue or live-backed route, with selection, camera focus and an explicit field-check boundary. The live backend also passes 102 pgTAP assertions across schema, RLS, growth and private push delivery. Wider cohort validation, field verification, release signing and store review remain deliberate gates rather than launch claims.
 
 ## Repository boundary
 
