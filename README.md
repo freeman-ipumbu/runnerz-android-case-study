@@ -36,7 +36,10 @@ It is not a follower network wearing running clothes. The unit of value is a run
 - Create Run, join/leave and post-run confirmation journeys.
 - Run Connections built from completed activity rather than vanity follows.
 - Founder, Pioneer, Legend, Trust Circle and Brand Ambassador distinctions.
-- Challenge, circuit, share-card and squad-versus-squad growth foundations.
+- An expansive, revocable earned-badge catalogue across performance, routes, community, trust and safety, with governed legacy distinctions kept separate.
+- Challenge, circuit, privacy-safe share-card, rotating run-fact and squad-versus-squad growth foundations.
+- Owner-controlled public profile editing with a metadata-stripped, size-capped WebP portrait derivative.
+- Personalised Namibian greetings plus reduced-motion-aware, device-tiered launch and celebration feedback.
 - Production-shaped email signup, confirmation, sign-in and password recovery with clear next actions.
 - Event-backed in-app and push-notification foundations for run and community moments.
 - A lawful emergency quick-dial action that opens the system dialler without claiming dispatch.
@@ -44,7 +47,7 @@ It is not a follower network wearing running clothes. The unit of value is a run
 
 ## Selected Android surfaces
 
-All captures below come from the real `1.0.4` Android build on a physical HONOR device at 1200 × 2664. No speculative phone mockups are used.
+All captures below come from the real `1.0.7` Android build on a physical HONOR device at 1200 × 2664. No speculative phone mockups are used.
 
 | Welcome | Secure sign-in | Create account |
 |---|---|---|
@@ -62,9 +65,13 @@ All captures below come from the real `1.0.4` Android build on a physical HONOR 
 |---|---|---|
 | ![Runnerz Discover](assets/app-discover.webp) | ![Runnerz Community](assets/app-community.webp) | ![Runnerz Founder profile](assets/app-profile.webp) |
 
-| Emergency quick dial |
+| Governed badge shelf | Privacy-safe share studio | Emergency quick dial |
+|---|---|---|
+| ![Runnerz governed recognition](assets/app-badges.webp) | ![Runnerz share-card studio](assets/app-share-card.webp) | ![Runnerz emergency quick dial](assets/app-emergency-quick-dial.webp) |
+
+| Device-aware completion moment |
 |---|
-| ![Runnerz emergency quick dial](assets/app-emergency-quick-dial.webp) |
+| ![Runnerz run-completion celebration](assets/app-run-celebration.webp) |
 
 ## Design science approach
 
@@ -95,11 +102,11 @@ Exact personal locations and private homes are not part of the public product st
 
 ## Current status
 
-The canonical Android implementation remains private. Version `1.0.4` is installed as separate Live and Field Test applications on the same physical device, and `1.0.4-field-test (5)` is distributed through a controlled Firebase tester group. Both build flavours pass their unit-test suites and assemble successfully.
+The canonical Android implementation remains private. Version `1.0.7` is installed as separate Live and Field Test applications on the same physical device, and `1.0.7-field-test (8)` is distributed through a controlled Firebase tester group. Both build flavours pass their unit-test suites and assemble successfully.
 
 Account creation, email confirmation, visible-password controls, matching-password validation, resend confirmation, privacy-safe recovery and authenticated in-app password updates are connected to Supabase Auth. A real founder recovery uncovered a callback/session race; the release now waits for the genuine authenticated recovery session before exposing the password-update form.
 
-Core route discovery, matching, community, profile, lawful SOS dialling and notification foundations have been built and exercised. Wider cohort validation, field verification, release signing and store review remain deliberate gates rather than launch claims.
+Core route discovery, matching, community, editable profiles, lawful SOS dialling and notification foundations have been built and exercised. The live backend also passes 102 pgTAP assertions across schema, RLS, growth and private push delivery. Wider cohort validation, field verification, release signing and store review remain deliberate gates rather than launch claims.
 
 ## Repository boundary
 
