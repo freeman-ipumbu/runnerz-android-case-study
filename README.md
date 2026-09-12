@@ -47,7 +47,7 @@ It is not a follower network wearing running clothes. The unit of value is a run
 
 ## Selected Android surfaces
 
-All captures below come from the real `1.0.8` Android build on a physical HONOR device at 1200 × 2664. No speculative phone mockups are used.
+All captures below come from the real `1.0.10` Android field-test experience on a physical HONOR device at 1200 × 2664. No speculative phone mockups are used.
 
 | Welcome | Secure sign-in | Create account |
 |---|---|---|
@@ -73,7 +73,15 @@ All captures below come from the real `1.0.8` Android build on a physical HONOR 
 |---|
 | ![Runnerz ranked public meetup options](assets/app-meetup-options.webp) |
 
-The earlier completion capture has been retired from this gallery. It used wording that could imply verified distance was banked by a timer-only session. A replacement will be added after physical-device validation of the revised screen.
+| Privacy onboarding | Trust onboarding | Runner DNA |
+|---|---|---|
+| ![Runnerz privacy onboarding](assets/app-privacy-onboarding.webp) | ![Runnerz trust onboarding](assets/app-trust-onboarding.webp) | ![Runnerz Runner DNA](assets/app-runner-dna.webp) |
+
+| Run completion | Founder welcome | Founder’s Corner |
+|---|---|---|
+| ![Runnerz run completion](assets/app-run-celebration.webp) | ![Signed Runnerz Founder welcome](assets/app-founder-welcome.webp) | ![Runnerz Founder’s Corner](assets/app-founder-community.webp) |
+
+The current completion capture uses the corrected session-complete wording. A timer-only session is not presented as verified distance, GPS recording or earned performance credit.
 
 ## Design science approach
 
@@ -106,9 +114,9 @@ Exact personal locations and private homes are not part of the public product st
 
 The canonical Android implementation remains private. Live and Field Test are separate applications; distribution is controlled through Firebase App Distribution. Historical screenshots above are not a statement of the currently distributed build.
 
-The September completion regression work moves celebration feedback above the expanded-map window, keeps it available until dismissal, queues simultaneous completion and badge events, and supports scrolling at larger text sizes. Timer completion is distinct from GPS recording, verified distance and earned performance credit. Automated checks and physical-device acceptance are reported separately; the revised screen is awaiting its next physical-device pass.
+The September completion regression work moves celebration feedback above the expanded-map window, keeps it available until dismissal, queues simultaneous completion and badge events, and supports scrolling at larger text sizes. The refreshed gallery now shows the corrected session-complete state. Timer completion is distinct from GPS recording, verified distance and earned performance credit. Automated checks and physical-device acceptance remain separately reported.
 
-Version 1.0.10 is now the sole release in the private Field Test distribution listing. Both variants passed 42 JVM tests each; both app APKs and the Field Test instrumentation APK compiled. The distributed binary was downloaded and checksum-matched, and its signing identity matches the previous field-test release. This is build/distribution evidence, not a claim that the deferred handset walkthrough is complete.
+Version 1.0.10 is now the sole release in the private Field Test distribution listing. Both variants passed 42 JVM tests each; both app APKs and the Field Test instrumentation APK compiled. The distributed binary was downloaded and checksum-matched, and its signing identity matches the previous field-test release. This is build/distribution evidence; it does not replace a complete handset walkthrough for every deferred edge case.
 
 Account creation, email confirmation, visible-password controls, matching-password validation, resend confirmation, privacy-safe recovery and authenticated in-app password updates are connected to Supabase Auth. A real founder recovery uncovered a callback/session race; the release now waits for the genuine authenticated recovery session before exposing the password-update form.
 
