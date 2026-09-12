@@ -73,9 +73,7 @@ All captures below come from the real `1.0.8` Android build on a physical HONOR 
 |---|
 | ![Runnerz ranked public meetup options](assets/app-meetup-options.webp) |
 
-| Device-aware completion moment |
-|---|
-| ![Runnerz run-completion celebration](assets/app-run-celebration.webp) |
+The earlier completion capture has been retired from this gallery. It used wording that could imply verified distance was banked by a timer-only session. A replacement will be added after physical-device validation of the revised screen.
 
 ## Design science approach
 
@@ -106,7 +104,9 @@ Exact personal locations and private homes are not part of the public product st
 
 ## Current status
 
-The canonical Android implementation remains private. Version `1.0.8` is installed as separate Live and Field Test applications on the same physical device, and `1.0.8-field-test (9)` is distributed through controlled Firebase App Distribution access. Both build flavours pass their unit-test suites and assemble successfully.
+The canonical Android implementation remains private. Live and Field Test are separate applications; distribution is controlled through Firebase App Distribution. Historical screenshots above are not a statement of the currently distributed build.
+
+The September completion regression work moves celebration feedback above the expanded-map window, keeps it available until dismissal, queues simultaneous completion and badge events, and supports scrolling at larger text sizes. Timer completion is distinct from GPS recording, verified distance and earned performance credit. Automated checks and physical-device acceptance are reported separately; the revised screen is awaiting its next physical-device pass.
 
 Account creation, email confirmation, visible-password controls, matching-password validation, resend confirmation, privacy-safe recovery and authenticated in-app password updates are connected to Supabase Auth. A real founder recovery uncovered a callback/session race; the release now waits for the genuine authenticated recovery session before exposing the password-update form.
 
