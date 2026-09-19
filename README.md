@@ -44,10 +44,21 @@ It is not a follower network wearing running clothes. The unit of value is a run
 - Event-backed in-app and push-notification foundations for run and community moments.
 - A lawful emergency quick-dial action that opens the system dialler without claiming dispatch.
 - Honest weather, location and safety states that do not claim capabilities the product has not activated.
+- A device-local active-run recorder with a lime GPS trail, restrained mid-run metrics, foreground controls, protected finish flow and durable offline run history.
+- Duplicate-safe aggregate account sync for banked kilometres and server-qualified weekly leaderboards, while exact completed trails remain on the phone.
+- Explicit, area-only Running Nearby presence that never publishes coordinates, exact distance, direction or trail.
+- Host-defined open, women-only and women-led run audiences. Women-only runs are invite-only; an optional self-reported onboarding preference stays private, is never inferred or publicly exposed, and never bypasses host approval.
+- A music-app handoff and swipeable Community rail for confirmed sponsors, events, route activations and local culture.
+
+## Ambassador and culture layer
+
+![Shadrac ShowTime Mavungu](assets/showtime-ambassador.jpg)
+
+Shadrac “ShowTime” Mavungu is presented as an official Runnerz Brand Ambassador using his supplied portrait. He is developing an original Runnerz track, with Didi intended to lead video and content production. Any featured artist will be announced only when confirmed. The ambassador role is governed working provenance—not identity verification, behavioural trust or earned running performance.
 
 ## Selected Android surfaces
 
-All captures below come from the real `1.0.10` Android field-test experience on a physical HONOR device at 1200 × 2664. No speculative phone mockups are used.
+All captures below come from real Android field-test builds on physical HONOR hardware at 1200 × 2664. The final row is fresh 1.0.11 evidence; no speculative phone mockups are used.
 
 | Welcome | Secure sign-in | Create account |
 |---|---|---|
@@ -81,7 +92,11 @@ All captures below come from the real `1.0.10` Android field-test experience on 
 |---|---|---|
 | ![Runnerz run completion](assets/app-run-celebration.webp) | ![Signed Runnerz Founder welcome](assets/app-founder-welcome.webp) | ![Runnerz Founder’s Corner](assets/app-founder-community.webp) |
 
-The current completion capture uses the corrected session-complete wording. A timer-only session is not presented as verified distance, GPS recording or earned performance credit.
+| Expanded map controls | Banked Miles | Women-run options | ShowTime ambassador story |
+|---|---|---|---|
+| ![Runnerz expanded route switching controls](assets/app-live-route-switching.png) | ![Runnerz durable Banked Miles history](assets/app-banked-miles.png) | ![Runnerz open, women-only and women-led run options](assets/app-women-run-options.png) | ![Shadrac ShowTime Mavungu in Runnerz Community](assets/app-showtime-ambassador.png) |
+
+The historical completion capture uses the corrected 1.0.10 wording. The new 1.0.11 device captures prove responsive expanded-map route switching, persistent offline run history, explicit run audiences and the final ShowTime presentation. Automated Android 15 handset tests passed 27/27; controlled outdoor distance/trail accuracy and battery validation remain honest field gates.
 
 ## Design science approach
 
@@ -116,7 +131,7 @@ The canonical Android implementation remains private. Live and Field Test are se
 
 The September completion regression work moves celebration feedback above the expanded-map window, keeps it available until dismissal, queues simultaneous completion and badge events, and supports scrolling at larger text sizes. The refreshed gallery now shows the corrected session-complete state. Timer completion is distinct from GPS recording, verified distance and earned performance credit. Automated checks and physical-device acceptance remain separately reported.
 
-Version 1.0.10 is now the sole release in the private Field Test distribution listing. Both variants passed 42 JVM tests each; both app APKs and the Field Test instrumentation APK compiled. The distributed binary was downloaded and checksum-matched, and its signing identity matches the previous field-test release. This is build/distribution evidence; it does not replace a complete handset walkthrough for every deferred edge case.
+Version 1.0.10 remains the last evidenced private Field Test distribution. The 1.0.11 source candidate adds live foreground GPS tracking, a lime recorded trail, distance/current pace/average pace/elevation gain, pause/resume and finish protection, responsive enlarged-map route controls with separate snap-to-runner and snap-to-route actions, route-selected starts, durable offline run history, duplicate-safe aggregate mileage sync and server-qualified weekly leaderboards, music handoff, area-only Running Nearby, women-only and women-led run options, a sponsor/event Community rail, expanded badge foundations, three new real-data route studies and Shadrac “ShowTime” Mavungu as an official Brand Ambassador. Distribution and handset acceptance remain separate gates.
 
 Account creation, email confirmation, visible-password controls, matching-password validation, resend confirmation, privacy-safe recovery and authenticated in-app password updates are connected to Supabase Auth. A real founder recovery uncovered a callback/session race; the release now waits for the genuine authenticated recovery session before exposing the password-update form.
 
