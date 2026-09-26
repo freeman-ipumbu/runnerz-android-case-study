@@ -62,15 +62,15 @@ Shadrac “ShowTime” Mavungu is presented as an official Runnerz Brand Ambassa
 
 This is original ecosystem artwork, not a handset capture. The versioned device evidence begins in the section below.
 
-**UNIFIED × Runnerz** is the official music layer for the Runnerz ecosystem. Its 8.0 Android candidate creates private 30, 45, 60 and 90-minute run mixes from the listener’s own library, sequences them through warm-up, lock-in, tempo and finish-kick phases, and begins playback before opening Runnerz.
+**UNIFIED × Runnerz** is the official music layer for the Runnerz ecosystem. UNIFIED 20.0 “Signal Command” creates private 30, 45, 60 and 90-minute run mixes from the listener’s own library, sequences them through warm-up, lock-in, tempo and finish-kick phases, and begins playback before opening Runnerz.
 
-The matching Runnerz 1.0.12 receiver validates the documented `runnerz://music-session` contract shape and presents a restrained linked-session confirmation. The handoff is deliberately narrow: session title, target duration and track count cross the app boundary; track identities, full listening history and exact route data do not. Both Live and Field Test variants compile with the receiver enabled. A signed physical-device start/run/return test remains a release gate, so this record does not call the cross-app loop production-complete.
+The matching Runnerz 1.0.13 receiver validates the documented `runnerz://music-session` contract shape and presents a restrained linked-session confirmation. The handoff is deliberately narrow: session title, target duration and track count cross the app boundary; track identities, full listening history and exact route data do not. Both Live (`com.runnerz.app`) and Field Test (`com.runnerz.app.fieldtest`) variants compile with the receiver enabled at versionCode 14. A signed physical-device start/run/return test remains a release gate, so this record does not call the cross-app loop production-complete.
 
 UNIFIED’s rights-ready ShowTime channel activates for local tracks whose metadata matches the declared artist identity. A match is not proof of approval or distribution rights; the channel does not bundle ambassador audio or artwork, promise a remote stream, or replace explicit artist and rights-holder approval.
 
 ## Selected Android surfaces
 
-All captures below come from real Android field-test builds on physical HONOR hardware at 1200 × 2664. The final row is fresh 1.0.11 evidence; no speculative phone mockups are used.
+All captures below come from real Android field-test builds on physical HONOR hardware at 1200 × 2664. Historical rows are retained as labelled evidence, while the UNIFIED × Runnerz relay row is the current 1.0.13 integration capture; no speculative phone mockups are used.
 
 | Welcome | Secure sign-in | Create account |
 |---|---|---|
@@ -108,7 +108,11 @@ All captures below come from real Android field-test builds on physical HONOR ha
 |---|---|---|---|
 | ![Runnerz expanded route switching controls](assets/app-live-route-switching.png) | ![Runnerz durable Banked Miles history](assets/app-banked-miles.png) | ![Runnerz open, women-only and women-led run options](assets/app-women-run-options.png) | ![Shadrac ShowTime Mavungu in Runnerz Community](assets/app-showtime-ambassador.png) |
 
-The historical completion capture uses the corrected 1.0.10 wording. The new 1.0.11 device captures prove responsive expanded-map route switching, persistent offline run history, explicit run audiences and the final ShowTime presentation. Automated Android 15 handset tests passed 27/27; controlled outdoor distance/trail accuracy and battery validation remain honest field gates.
+| UNIFIED × Runnerz relay |
+|---|
+| ![Runnerz arms a private UNIFIED soundtrack](assets/app-unified-music-relay.png) |
+
+The gallery intentionally retains historical evidence labels where relevant. The current relay capture proves the UNIFIED × Runnerz session surface; expanded-map route switching, persistent offline run history, explicit run audiences and the ShowTime presentation remain separately visible. Automated Android 15 handset tests passed 27/27; controlled outdoor distance/trail accuracy and battery validation remain honest field gates.
 
 ## Design science approach
 
@@ -143,9 +147,7 @@ The canonical Android implementation remains private. Live and Field Test are se
 
 The September completion regression work moves celebration feedback above the expanded-map window, keeps it available until dismissal, queues simultaneous completion and badge events, and supports scrolling at larger text sizes. The refreshed gallery now shows the corrected session-complete state. Timer completion is distinct from GPS recording, verified distance and earned performance credit. Automated checks and physical-device acceptance remain separately reported.
 
-Version 1.0.10 remains the last evidenced private Field Test distribution. The 1.0.11 source candidate adds live foreground GPS tracking, a lime recorded trail, distance/current pace/average pace/elevation gain, pause/resume and finish protection, responsive enlarged-map route controls with separate snap-to-runner and snap-to-route actions, route-selected starts, durable offline run history, duplicate-safe aggregate mileage sync and server-qualified weekly leaderboards, music handoff, area-only Running Nearby, women-only and women-led run options, a sponsor/event Community rail, expanded badge foundations, three new real-data route studies and Shadrac “ShowTime” Mavungu as an official Brand Ambassador. Distribution and handset acceptance remain separate gates.
-
-The 1.0.12 source candidate promotes that generic music handoff into the matched receiver for UNIFIED, the official Runnerz music player. It validates the expected action, scheme, host, source and supported session durations, bounds display data and consumes accepted links once. The receiver has compiled in both Live and Field Test variants; physical handset acceptance is still pending.
+The current source release is Runnerz Live `1.0.13` / versionCode `14` and Runnerz Field Test `1.0.13-field-test` / versionCode `14`. Both variants include the bounded UNIFIED receiver, the device-local active-run recorder, privacy-safe aggregate sync and the same route/safety boundaries. The exact APK identities and SHA-256 checksums are recorded in [`docs/RELEASE-1.0.13.md`](docs/RELEASE-1.0.13.md). This public case study records source/build evidence; it does not claim that a Firebase release, outdoor GPS completion or store package has been distributed unless separately verified.
 
 Account creation, email confirmation, visible-password controls, matching-password validation, resend confirmation, privacy-safe recovery and authenticated in-app password updates are connected to Supabase Auth. A real founder recovery uncovered a callback/session race; the release now waits for the genuine authenticated recovery session before exposing the password-update form.
 
