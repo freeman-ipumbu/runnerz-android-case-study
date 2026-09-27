@@ -66,7 +66,7 @@ This is original ecosystem artwork, not a handset capture. The versioned device 
 
 **UNIFIED × Runnerz** is the official music layer for the Runnerz ecosystem. UNIFIED 20.0 “Signal Command” creates private 30, 45, 60 and 90-minute run mixes from the listener’s own library, sequences them through warm-up, lock-in, tempo and finish-kick phases, and begins playback before opening Runnerz.
 
-The Runnerz 1.1.0 receiver validates the documented `runnerz://music-session` contract, checks for a supported installed UNIFIED package and presents a restrained linked-session confirmation. The handoff is deliberately narrow: session title, target duration and bounded track count cross the app boundary; track identities, full listening history and exact route data do not. Both Live (`com.runnerz.app`) and Field Test (`com.runnerz.app.fieldtest`) variants compile with the receiver enabled at versionCode 15. A complete physical-device start/run/return test remains a release gate, so this record does not call the cross-app loop production-complete.
+The Runnerz 1.1.0 receiver validates the documented `runnerz://music-session` contract, checks for a supported installed UNIFIED package and presents a restrained linked-session confirmation. The handoff is deliberately narrow: session title, target duration and bounded track count cross the app boundary; track identities, full listening history and exact route data do not. Both Live (`com.runnerz.app`) and Field Test (`com.runnerz.app.fieldtest`) variants compile with the receiver enabled at versionCode 16. A complete physical-device start/run/return test remains a release gate, so this record does not call the cross-app loop production-complete.
 
 UNIFIED’s rights-ready ShowTime channel activates for local tracks whose metadata matches the declared artist identity. A match is not proof of approval or distribution rights; the channel does not bundle ambassador audio or artwork, promise a remote stream, or replace explicit artist and rights-holder approval.
 
@@ -114,9 +114,9 @@ All captures below come from real Android field-test builds on physical HONOR ha
 |---|
 | ![Runnerz arms a private UNIFIED soundtrack](assets/app-unified-music-relay.png) |
 
-| 1.1.0 controlled signature trail on HONOR REA-NX9 |
-|---|
-| ![Controlled Runnerz Field Test capture showing two lime trail segments, 60 accepted fixes and 0.18 km on real Eros route geometry](assets/app-1-1-0-controlled-signature-trail.jpg) |
+| 1.1.0 code-16 trail | Expanded active-run map |
+|---|---|
+| ![Controlled Runnerz Field Test capture showing the branded lime trail, live metrics, Finish and a non-overlapping hold-to-open SOS action on real Avis route geometry](assets/app-1-1-0-controlled-signature-trail-code16.png) | ![Expanded Runnerz active-run map showing the branded trail, route controls, live metrics, Finish and hold-to-open SOS action](assets/app-1-1-0-controlled-signature-trail-expanded-code16.png) |
 
 The gallery documents implemented product direction, including the bounded UNIFIED session surface, expanded-map route switching, persistent offline run history, explicit run audiences and the ShowTime presentation. The historical completion capture uses corrected earlier-release wording. The new trail capture exercised the production tracking and metrics path with deterministic fixes on the handset. It does not show an outdoor run or prove GNSS accuracy. Outdoor tracking, screen-off continuity, battery behaviour and store acceptance remain separate gates.
 
@@ -149,11 +149,11 @@ Exact personal locations and private homes are not part of the public product st
 
 ## Runnerz 1.1.0 candidate evidence
 
-The private Android release record identifies the current candidate as **Runnerz 1.1.0 (code 15)**. Publicly safe build evidence is summarised below; private backend identifiers, signing details, tester data and raw trails are intentionally excluded.
+The private Android release record identifies the current candidate as **Runnerz 1.1.0 (code 16)**. Publicly safe build evidence is summarised below; private backend identifiers, signing details, tester data and raw trails are intentionally excluded.
 
 | Evidence area | Verified candidate result |
 |---|---|
-| Unit tests | **260 passed total, 0 failed**: 130 for Live and 130 for Field Test |
+| Unit tests | **284 passed total, 0 failed**: 142 for Live and 142 for Field Test |
 | Android lint | Live release and Field Test debug lint completed with **0 errors** |
 | Assembly | Both app variants and both instrumentation packages assembled successfully |
 | GPS and mapping | Accepted-fix filtering, live camera follow, segmented full-span branded trail, pause/resume recovery and route-proximity guidance are implemented |
@@ -161,11 +161,14 @@ The private Android release record identifies the current candidate as **Runnerz
 | Banked Miles | Aggregate summaries are account/guest scoped; all summaries are retained while exact trails are bounded to the latest 50 runs per scope |
 | Trust and social | Area-only Running Nearby, proposal flow, report/block coverage, open/women-only/women-led audiences and trusted-runner invitations are implemented |
 | Account integrity | Current legal-document acceptance fails closed; account-backed screens and background work are withheld when acceptance is missing, stale or unverifiable |
+| Background ownership | Foreground recording remains bound to the verified account/session owner; an already-verified run may survive transient restore or network-unavailable states, while sign-out, account switch, legal-access loss and malformed session state revoke it |
+| Social lifecycle | Nearby and Community refresh is foreground- and mutation-driven; the previous application-lifetime timer loop was removed so minimising Runnerz does not leave a hidden social refresh loop running |
+| Run-history isolation | Recorded runs remain withheld while account/session ownership is transient or unverifiable; guest and account ledgers open only after a settled scope is selected |
 | Music handoff | Supported UNIFIED discovery, explicit consent, cancellation, session expiry and bounded aggregate return are implemented |
 
 ### Controlled handset trail
 
-On a physical **HONOR REA-NX9**, the separate Field Test instrumentation package fed 60 deterministic, realistic fixes through the production tracking and metrics path over **real Eros Urban Arc route geometry**. The unaltered capture above shows **0.18 km**, current and average pace, estimated elevation gain, and **two lime `#39FF88` trail segments** separated by a pause/resume boundary. The “5 TEST RUNNERS” route-preview label is Field Test fixture content, not live nearby activity. The simulated session was never finished or banked; its active checkpoint was cleared and the test package was removed. This verifies the handset rendering and accepted-fix path under controlled input. It does not measure outdoor GNSS accuracy or prove a completed real-world run.
+On a physical **HONOR REA-NX9**, the separate Field Test instrumentation package fed deterministic, realistic fixes through the production tracking and metrics path over real Windhoek route geometry. The code-16 captures above show current and average pace, accepted fixes, estimated elevation gain, pause/resume-separated lime `#39FF88` trail segments, and the corrected active-run actions in both normal and expanded map states. Finish and the compact **HOLD • SOS** progress-ring action remain simultaneously visible without overlap; a physical 3.3-second hold opened the emergency quick-dial sheet and placed no call. The “5 TEST RUNNERS” route-preview label is Field Test fixture content, not live nearby activity. The simulated sessions were never finished or banked; their active checkpoints were cleared and the ledger hash stayed unchanged. This verifies the handset rendering, accepted-fix and protected emergency-action paths under controlled input. It does not measure outdoor GNSS accuracy or prove a completed real-world run.
 
 The expanded map has four separate actions: **ME** follows the runner, **ROUTE** centres the selected route, and **PREV/NEXT** changes the selected route. Route proximity can help a runner reorient, but Runnerz does **not** snap recorded GPS points, the lime trail or banked distance onto a planned route.
 
@@ -181,7 +184,7 @@ The September completion regression work moves celebration feedback above the ex
 
 Runnerz 1.1.0 hardens live foreground GPS tracking, branded full-span trails, useful movement metrics, responsive enlarged-map controls, route-selected starts, durable account-scoped Banked Miles, privacy-safe Running Nearby, production moderation surfaces, women-only invitations, current legal-document acceptance and the UNIFIED music handoff. It also expands the sponsor/event Community rail, badge foundations, real-map route studies and Shadrac “ShowTime” Mavungu’s official ambassador presentation.
 
-The current source release is Runnerz Live `1.1.0` / versionCode `15` and Runnerz Field Test `1.1.0-field-test` / versionCode `15`. The latest private Field Test build is the sole release retained in Firebase App Distribution; this is not a public-store availability claim. The earlier [`docs/RELEASE-1.0.13.md`](docs/RELEASE-1.0.13.md) remains as historical evidence, while the controlled 1.1.0 handset proof and the open release gates below describe the current boundary.
+The current source release is Runnerz Live `1.1.0` / versionCode `16` and Runnerz Field Test `1.1.0-field-test` / versionCode `16`. The latest private Field Test build is the sole release retained in Firebase App Distribution; this is not a public-store availability claim. The earlier [`docs/RELEASE-1.0.13.md`](docs/RELEASE-1.0.13.md) remains as historical evidence, while the controlled 1.1.0 handset proof and the open release gates below describe the current boundary.
 
 Account creation, email confirmation, visible-password controls, matching-password validation, resend confirmation, privacy-safe recovery and authenticated in-app password updates are connected to Supabase Auth. A real founder recovery uncovered a callback/session race; the release now waits for the genuine authenticated recovery session before exposing the password-update form.
 
