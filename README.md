@@ -44,17 +44,19 @@ It is not a follower network wearing running clothes. The unit of value is a run
 - Event-backed in-app and push-notification foundations for run and community moments.
 - A lawful emergency quick-dial action that opens the system dialler without claiming dispatch.
 - Honest weather, location and safety states that do not claim capabilities the product has not activated.
-- A device-local active-run recorder with a lime GPS trail, restrained mid-run metrics, foreground controls, protected finish flow and durable offline run history.
-- Duplicate-safe aggregate account sync for banked kilometres and server-qualified weekly leaderboards, while exact completed trails remain on the phone.
+- An accepted-fix active-run recorder with a full-span segmented `#39FF88` trail, foreground controls, protected finish flow and durable offline run history.
+- Distance, elapsed time, current and average pace, accepted-fix count and vertical-accuracy-gated estimated elevation gain without turning the run screen into a dashboard wall.
+- Account-scoped aggregate history for banked kilometres and server-qualified weekly leaderboards, while exact completed trails remain on the phone. Rankings are device-recorded, not race-verified or anti-tamper-attested.
 - Explicit, area-only Running Nearby presence that never publishes coordinates, exact distance, direction or trail.
-- Host-defined open, women-only and women-led run audiences. Women-only runs are invite-only; an optional self-reported onboarding preference stays private, is never inferred or publicly exposed, and never bypasses host approval.
-- UNIFIED as the official Runnerz music player through an explicit, privacy-light session handoff, plus a swipeable Community rail for confirmed sponsors, events, route activations and local culture.
+- Report and block controls across nearby runners, matches, incoming proposals, meetup hosts and Run Connections.
+- Host-defined open, women-only and women-led run audiences. Women-only runs use trusted-runner invitations and invite-only discovery; an optional self-reported onboarding preference stays private, is never inferred or publicly exposed, and never bypasses host approval.
+- UNIFIED as the official Runnerz music player through a restrained, consent-led and privacy-light session handoff, plus a swipeable Community rail for events, future partner slots, route activations and local culture.
 
 ## Ambassador and culture layer
 
 ![Shadrac ShowTime Mavungu](assets/showtime-ambassador.jpg)
 
-Shadrac “ShowTime” Mavungu is presented as an official Runnerz Brand Ambassador using his supplied portrait. He is developing an original Runnerz track, with Didi intended to lead video and content production. Any featured artist will be announced only when confirmed. The ambassador role is governed working provenance—not identity verification, behavioural trust or earned running performance.
+Shadrac “ShowTime” Mavungu is presented as an official Runnerz Brand Ambassador using his supplied portrait. Runnerz has announced the intention to develop an original track with ShowTime and to collaborate with Didi on future video and content. A finished recording, released video or additional featured artist is not claimed here and will be announced only when confirmed. The ambassador role is governed working provenance—not identity verification, behavioural trust or earned running performance.
 
 ## Official Runnerz Music Player
 
@@ -64,13 +66,13 @@ This is original ecosystem artwork, not a handset capture. The versioned device 
 
 **UNIFIED × Runnerz** is the official music layer for the Runnerz ecosystem. UNIFIED 20.0 “Signal Command” creates private 30, 45, 60 and 90-minute run mixes from the listener’s own library, sequences them through warm-up, lock-in, tempo and finish-kick phases, and begins playback before opening Runnerz.
 
-The matching Runnerz 1.0.13 receiver validates the documented `runnerz://music-session` contract shape and presents a restrained linked-session confirmation. The handoff is deliberately narrow: session title, target duration and track count cross the app boundary; track identities, full listening history and exact route data do not. Both Live (`com.runnerz.app`) and Field Test (`com.runnerz.app.fieldtest`) variants compile with the receiver enabled at versionCode 14. A signed physical-device start/run/return test remains a release gate, so this record does not call the cross-app loop production-complete.
+The Runnerz 1.1.0 receiver validates the documented `runnerz://music-session` contract, checks for a supported installed UNIFIED package and presents a restrained linked-session confirmation. The handoff is deliberately narrow: session title, target duration and bounded track count cross the app boundary; track identities, full listening history and exact route data do not. Both Live (`com.runnerz.app`) and Field Test (`com.runnerz.app.fieldtest`) variants compile with the receiver enabled at versionCode 15. A complete physical-device start/run/return test remains a release gate, so this record does not call the cross-app loop production-complete.
 
 UNIFIED’s rights-ready ShowTime channel activates for local tracks whose metadata matches the declared artist identity. A match is not proof of approval or distribution rights; the channel does not bundle ambassador audio or artwork, promise a remote stream, or replace explicit artist and rights-holder approval.
 
 ## Selected Android surfaces
 
-All captures below come from real Android field-test builds on physical HONOR hardware at 1200 × 2664. Historical rows are retained as labelled evidence, while the UNIFIED × Runnerz relay row is the current 1.0.13 integration capture; no speculative phone mockups are used.
+All captures below come from real Android field-test builds on physical HONOR hardware at 1200 × 2664; no speculative phone mockups are used. Historical rows remain labelled, the UNIFIED relay records the earlier integration surface, and the 1.1.0 trail capture is a controlled physical-handset simulation—not outdoor GNSS or final store acceptance.
 
 | Welcome | Secure sign-in | Create account |
 |---|---|---|
@@ -112,7 +114,11 @@ All captures below come from real Android field-test builds on physical HONOR ha
 |---|
 | ![Runnerz arms a private UNIFIED soundtrack](assets/app-unified-music-relay.png) |
 
-The gallery intentionally retains historical evidence labels where relevant. The current relay capture proves the UNIFIED × Runnerz session surface; expanded-map route switching, persistent offline run history, explicit run audiences and the ShowTime presentation remain separately visible. Automated Android 15 handset tests passed 27/27; controlled outdoor distance/trail accuracy and battery validation remain honest field gates.
+| 1.1.0 controlled signature trail on HONOR REA-NX9 |
+|---|
+| ![Controlled Runnerz Field Test capture showing two lime trail segments, 60 accepted fixes and 0.18 km on real Eros route geometry](assets/app-1-1-0-controlled-signature-trail.jpg) |
+
+The gallery documents implemented product direction, including the bounded UNIFIED session surface, expanded-map route switching, persistent offline run history, explicit run audiences and the ShowTime presentation. The historical completion capture uses corrected earlier-release wording. The new trail capture exercised the production tracking and metrics path with deterministic fixes on the handset. It does not show an outdoor run or prove GNSS accuracy. Outdoor tracking, screen-off continuity, battery behaviour and store acceptance remain separate gates.
 
 ## Design science approach
 
@@ -141,17 +147,56 @@ Runnerz does not represent suggested routes or meetup points as field-verified m
 
 Exact personal locations and private homes are not part of the public product story.
 
+## Runnerz 1.1.0 candidate evidence
+
+The private Android release record identifies the current candidate as **Runnerz 1.1.0 (code 15)**. Publicly safe build evidence is summarised below; private backend identifiers, signing details, tester data and raw trails are intentionally excluded.
+
+| Evidence area | Verified candidate result |
+|---|---|
+| Unit tests | **260 passed total, 0 failed**: 130 for Live and 130 for Field Test |
+| Android lint | Live release and Field Test debug lint completed with **0 errors** |
+| Assembly | Both app variants and both instrumentation packages assembled successfully |
+| GPS and mapping | Accepted-fix filtering, live camera follow, segmented full-span branded trail, pause/resume recovery and route-proximity guidance are implemented |
+| Run metrics | Elapsed time, distance, current/average pace, accepted-fix count and estimated elevation gain are implemented |
+| Banked Miles | Aggregate summaries are account/guest scoped; all summaries are retained while exact trails are bounded to the latest 50 runs per scope |
+| Trust and social | Area-only Running Nearby, proposal flow, report/block coverage, open/women-only/women-led audiences and trusted-runner invitations are implemented |
+| Account integrity | Current legal-document acceptance fails closed; account-backed screens and background work are withheld when acceptance is missing, stale or unverifiable |
+| Music handoff | Supported UNIFIED discovery, explicit consent, cancellation, session expiry and bounded aggregate return are implemented |
+
+### Controlled handset trail
+
+On a physical **HONOR REA-NX9**, the separate Field Test instrumentation package fed 60 deterministic, realistic fixes through the production tracking and metrics path over **real Eros Urban Arc route geometry**. The unaltered capture above shows **0.18 km**, current and average pace, estimated elevation gain, and **two lime `#39FF88` trail segments** separated by a pause/resume boundary. The “5 TEST RUNNERS” route-preview label is Field Test fixture content, not live nearby activity. The simulated session was never finished or banked; its active checkpoint was cleared and the test package was removed. This verifies the handset rendering and accepted-fix path under controlled input. It does not measure outdoor GNSS accuracy or prove a completed real-world run.
+
+The expanded map has four separate actions: **ME** follows the runner, **ROUTE** centres the selected route, and **PREV/NEXT** changes the selected route. Route proximity can help a runner reorient, but Runnerz does **not** snap recorded GPS points, the lime trail or banked distance onto a planned route.
+
+### Social and release-safe summary
+
+> Runnerz 1.1.0 is a verified Android candidate built around movement that remains legible: live GPS follow, a full-span Runnerz-green trail, useful run metrics, route-aware guidance, durable Banked Miles, privacy-safe nearby discovery, stronger community controls and an intentional UNIFIED music handoff. It is candidate evidence—not an App Store or Play Store availability claim.
+
 ## Current status
 
-The canonical Android implementation remains private. Live and Field Test are separate applications; distribution is controlled through Firebase App Distribution. Historical screenshots above are not a statement of the currently distributed build.
+The canonical Android implementation remains private. Live and Field Test are separate applications; controlled test distribution and public-store submission are separate release paths. The new 1.1.0 controlled capture closes a specific simulation check, while the complete outdoor handset matrix remains open.
 
 The September completion regression work moves celebration feedback above the expanded-map window, keeps it available until dismissal, queues simultaneous completion and badge events, and supports scrolling at larger text sizes. The refreshed gallery now shows the corrected session-complete state. Timer completion is distinct from GPS recording, verified distance and earned performance credit. Automated checks and physical-device acceptance remain separately reported.
 
-The current source release is Runnerz Live `1.0.13` / versionCode `14` and Runnerz Field Test `1.0.13-field-test` / versionCode `14`. Both variants include the bounded UNIFIED receiver, the device-local active-run recorder, privacy-safe aggregate sync and the same route/safety boundaries. The exact APK identities and SHA-256 checksums are recorded in [`docs/RELEASE-1.0.13.md`](docs/RELEASE-1.0.13.md). This public case study records source/build evidence; it does not claim that a Firebase release, outdoor GPS completion or store package has been distributed unless separately verified.
+Runnerz 1.1.0 hardens live foreground GPS tracking, branded full-span trails, useful movement metrics, responsive enlarged-map controls, route-selected starts, durable account-scoped Banked Miles, privacy-safe Running Nearby, production moderation surfaces, women-only invitations, current legal-document acceptance and the UNIFIED music handoff. It also expands the sponsor/event Community rail, badge foundations, real-map route studies and Shadrac “ShowTime” Mavungu’s official ambassador presentation.
+
+The current source release is Runnerz Live `1.1.0` / versionCode `15` and Runnerz Field Test `1.1.0-field-test` / versionCode `15`. The latest private Field Test build is the sole release retained in Firebase App Distribution; this is not a public-store availability claim. The earlier [`docs/RELEASE-1.0.13.md`](docs/RELEASE-1.0.13.md) remains as historical evidence, while the controlled 1.1.0 handset proof and the open release gates below describe the current boundary.
 
 Account creation, email confirmation, visible-password controls, matching-password validation, resend confirmation, privacy-safe recovery and authenticated in-app password updates are connected to Supabase Auth. A real founder recovery uncovered a callback/session race; the release now waits for the genuine authenticated recovery session before exposing the password-update form.
 
-Core route discovery, matching, community, editable profiles, lawful SOS dialling and notification foundations have been built and exercised. The route map now renders the full ranked two-to-three-option public meetup set for each catalogue or live-backed route, with selection, camera focus and an explicit field-check boundary. The live backend also passes 102 pgTAP assertions across schema, RLS, growth and private push delivery. Wider cohort validation, field verification, release signing and store review remain deliberate gates rather than launch claims.
+Core route discovery, matching, community, editable profiles, lawful SOS dialling and notification foundations have been built and exercised. The route map renders ranked public meetup options for catalogue or live-backed routes, with selection, camera focus and an explicit field-check boundary. Hosted database policy tests cover current legal acceptance, expiring nearby presence, run audiences and protected RPC execution. Wider cohort validation, field verification, release signing and store review remain deliberate gates rather than launch claims.
+
+### Open release gates
+
+- Recheck hosted account and legal reacceptance flows on both variants after their in-place handset updates.
+- Verify the complete moving-run journey outdoors: accepted trail, pause/resume gaps, route proximity, metrics, protected finish and Banked Miles.
+- Minimize and lock the phone, then verify location continuity and notification pause/resume/open-to-finish controls across relevant Android and OEM background states.
+- Measure outdoor distance accuracy and battery impact on the supported device range. Existing screenshots do not close these gates.
+- Confirm ordinary notification mirroring on a paired Wear OS watch if available. Runnerz 1.1.0 is not a native Wear OS app and does not provide watch-side GPS or SOS.
+- Supply external release signing, produce the signed Play AAB and complete Play Console Data safety, Health apps, foreground-service, reviewer-access, rating, privacy and deletion declarations.
+- Complete the final security-advisor and production music-signing checks before broad rollout.
+- Build and verify separate iOS/watchOS products. This Android repository contains no iOS, iPadOS, watchOS, Apple signing, privacy manifest or TestFlight target; Apple App Store and Apple Watch support are not claims of this release.
 
 ## Repository boundary
 
