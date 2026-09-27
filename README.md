@@ -153,14 +153,14 @@ The private Android release record identifies the current candidate as **Runnerz
 
 | Evidence area | Verified candidate result |
 |---|---|
-| Unit tests | **284 passed total, 0 failed**: 142 for Live and 142 for Field Test |
-| Android lint | Live release and Field Test debug lint completed with **0 errors** |
+| Unit tests | **290 passed total, 0 failed**: 145 for Live and 145 for Field Test |
+| Android lint | Live and Field Test debug lint completed with **0 errors** |
 | Assembly | Both app variants and both instrumentation packages assembled successfully |
 | GPS and mapping | Accepted-fix filtering, live camera follow, segmented full-span branded trail, pause/resume recovery and route-proximity guidance are implemented |
 | Run metrics | Elapsed time, distance, current/average pace, accepted-fix count and estimated elevation gain are implemented |
 | Banked Miles | Aggregate summaries are account/guest scoped; all summaries are retained while exact trails are bounded to the latest 50 runs per scope |
 | Trust and social | Area-only Running Nearby, proposal flow, report/block coverage, open/women-only/women-led audiences and trusted-runner invitations are implemented |
-| Account integrity | Current legal-document acceptance fails closed; account-backed screens and background work are withheld when acceptance is missing, stale or unverifiable |
+| Account integrity | Current legal-document acceptance fails closed; every Live assemble/bundle/install task now also rejects a missing hosted Supabase URL or publishable client key, preventing an account-offline QA APK from being packaged as Live |
 | Background ownership | Foreground recording remains bound to the verified account/session owner; an already-verified run may survive transient restore or network-unavailable states, while sign-out, account switch, legal-access loss and malformed session state revoke it |
 | Social lifecycle | Nearby and Community refresh is foreground- and mutation-driven; the previous application-lifetime timer loop was removed so minimising Runnerz does not leave a hidden social refresh loop running |
 | Run-history isolation | Recorded runs remain withheld while account/session ownership is transient or unverifiable; guest and account ledgers open only after a settled scope is selected |
@@ -184,7 +184,7 @@ The September completion regression work moves celebration feedback above the ex
 
 Runnerz 1.1.0 hardens live foreground GPS tracking, branded full-span trails, useful movement metrics, responsive enlarged-map controls, route-selected starts, durable account-scoped Banked Miles, privacy-safe Running Nearby, production moderation surfaces, women-only invitations, current legal-document acceptance and the UNIFIED music handoff. It also expands the sponsor/event Community rail, badge foundations, real-map route studies and Shadrac “ShowTime” Mavungu’s official ambassador presentation.
 
-The current source release is Runnerz Live `1.1.0` / versionCode `16` and Runnerz Field Test `1.1.0-field-test` / versionCode `16`. The latest private Field Test build is the sole release retained in Firebase App Distribution; this is not a public-store availability claim. The earlier [`docs/RELEASE-1.0.13.md`](docs/RELEASE-1.0.13.md) remains as historical evidence, while the controlled 1.1.0 handset proof and the open release gates below describe the current boundary.
+The current source release is Runnerz Live `1.1.0` / versionCode `16` and Runnerz Field Test `1.1.0-field-test` / versionCode `16`. Both backend-enabled APKs were reinstalled in place on the physical Android 15 handset and their pulled installed binaries matched the local candidates byte-for-byte. The Live account surface now exposes secure sign-in/create-account without the account-offline warning. The latest private Field Test build was freshly downloaded and hash-verified as the sole release retained in Firebase App Distribution; this is not a public-store availability claim. The earlier [`docs/RELEASE-1.0.13.md`](docs/RELEASE-1.0.13.md) remains as historical evidence, while the controlled 1.1.0 handset proof and the open release gates below describe the current boundary.
 
 Account creation, email confirmation, visible-password controls, matching-password validation, resend confirmation, privacy-safe recovery and authenticated in-app password updates are connected to Supabase Auth. A real founder recovery uncovered a callback/session race; the release now waits for the genuine authenticated recovery session before exposing the password-update form.
 
@@ -192,7 +192,7 @@ Core route discovery, matching, community, editable profiles, lawful SOS diallin
 
 ### Open release gates
 
-- Recheck hosted account and legal reacceptance flows on both variants after their in-place handset updates.
+- Complete hosted sign-in, account creation, email confirmation and legal reacceptance acceptance on both in-place handset variants with controlled test accounts.
 - Verify the complete moving-run journey outdoors: accepted trail, pause/resume gaps, route proximity, metrics, protected finish and Banked Miles.
 - Minimize and lock the phone, then verify location continuity and notification pause/resume/open-to-finish controls across relevant Android and OEM background states.
 - Measure outdoor distance accuracy and battery impact on the supported device range. Existing screenshots do not close these gates.
