@@ -56,7 +56,15 @@ It is not a follower network wearing running clothes. The unit of value is a run
 
 ![Shadrac ShowTime Mavungu](assets/showtime-ambassador.jpg)
 
-Shadrac “ShowTime” Mavungu is presented as an official Runnerz Brand Ambassador using his supplied portrait. Runnerz has announced the intention to develop an original track with ShowTime and to collaborate with Didi on future video and content. A finished recording, released video or additional featured artist is not claimed here and will be announced only when confirmed. The ambassador role is governed working provenance—not identity verification, behavioural trust or earned running performance.
+Shadrac “ShowTime” Mavungu is presented as an official Runnerz Brand Ambassador using his supplied portrait. The first official teaser for his original Runnerz soundtrack is ready; the full recorded and mastered track is still in development. Planned Didi-led content and any additional featured artist remain unconfirmed. The ambassador role is governed working provenance—not identity verification, behavioural trust or earned running performance.
+
+### Official soundtrack teaser · ShowTime × Runnerz
+
+[![Official Runnerz soundtrack teaser cover featuring ShowTime](assets/showtime-soundtrack-teaser-cover.png)](media/runnerz-showtime-official-soundtrack-teaser.mp4)
+
+**[Watch the 64-second Performance Cut ↗](media/runnerz-showtime-official-soundtrack-teaser.mp4)**
+
+“Breathe in. Something is coming.” The teaser sets **HARTLOOP / HARDLOOP / LOOP**—heart, run and walk—against ShowTime's studio performance and the Runnerz lime trail. It is an official campaign teaser, not the finished song, final master or a claim that the app is publicly available on Google Play. Generated campaign scenes are visual concepts; the brief app-screen moments are labelled controlled field-test visuals, not outdoor GPS proof. The original source recording and unfinished full track are not published in this repository.
 
 ## Official Runnerz Music Player
 
