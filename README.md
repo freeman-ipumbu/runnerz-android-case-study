@@ -218,3 +218,5 @@ Security concerns should be sent privately to [info@runnerznamibia.com](mailto:i
 ---
 
 © 2026 Runnerz Namibia. Product and brand material is shared for portfolio viewing. No licence is granted to reproduce the product, identity or documentation.
+
+<p align="center"><strong>A Digital Experience by <a href="https://www.solarspin-namibia.xyz/">SolarSpin Technologies</a>.</strong></p>
